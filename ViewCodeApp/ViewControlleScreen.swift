@@ -21,26 +21,6 @@ final class ViewControlleScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        
-//        let button = UIButton(frame: .zero)
-//        button.backgroundColor = .red
-//        button.setTitle("Fetch", for: .normal)
-//        button.translatesAutoresizingMaskIntoConstraints = false
-        
-        // add view
-//        addSubview(button)
-        
-        // Config constraints
-//        button.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
-//        button.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
-//        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//        button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30).isActive = true
-              
-        // Setup adicional
-        
-        
-        
-//        backgroundColor = .darkGray
     }
     
     required init?(coder: NSCoder) {
@@ -55,10 +35,12 @@ extension ViewControlleScreen: CodeView {
     }
     
     func setupConstraints() {
-        button.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
-        button.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30).isActive = true
+        button.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(15)
+            make.right.equalToSuperview().inset(15)
+            make.height.equalTo(50)
+            make.bottom.equalTo(self).inset(30)
+        }
     }
     
     func setupAdditionalConfiguration() {

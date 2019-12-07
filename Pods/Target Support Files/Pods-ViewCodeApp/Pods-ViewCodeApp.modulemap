@@ -1,0 +1,6 @@
+framework module Pods_ViewCodeApp {
+  umbrella header "Pods-ViewCodeApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
