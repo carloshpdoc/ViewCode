@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let screen = ViewControlleScreen()
-    
+//    let gridBox = GridBoxView()
     override func loadView() {
         self.view = screen
     }
